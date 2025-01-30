@@ -1,0 +1,456 @@
+
+:root {
+    /*colors for dark theme*/
+    --color-red: red;
+    --color-gray: #414141;
+    --color-black:#000000;
+    --color-white: white;
+
+    --color-dark-gray: #232323;
+    --color-light-gray: #dcdcdc;
+    --color-light-pink: lightpink;
+
+
+    --gradient-red-black: linear-gradient(45deg, #ff0000, #000000);
+    --gradient-light-red-black: linear-gradient(45deg, #eb7c7c, #484848);
+
+    /*for light theme*/
+    --color-light-red-dark: #fe7070; 
+    --color-light-red-bright: #eda1a1; 
+    --color-red-dark: #f94141;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html,body{
+    width: 100vw;
+    height: 100vh;
+}
+body.dark-theme{
+    color: var(--color-light-gray);
+}
+body.light-theme{
+    color: var(--color-dark-gray);
+}
+.container{
+    display: grid;
+    grid-template-areas: 
+        "sidebar main";
+    grid-template-columns: 250px 1fr;
+    grid-template-rows: auto 1fr auto;
+    height: 100%;
+    width: 100%;
+}
+a{
+    text-decoration: none;
+}
+/*side bar*/
+.topnav{
+    display: none;
+}
+
+.sidebar{
+    grid-area: sidebar;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+}
+body.dark-theme .sidebar{
+    background-color: var(--color-black);
+}
+body.light-theme .sidebar{
+    background-color: var(--color-light-red-dark);
+}
+.sidebar__heading{
+    font-size: xx-large;
+    font-weight: bolder;
+}
+body.dark-theme .sidebar__heading{
+    color: var(--color-red);
+}
+.input__field{
+    margin-top: 18px;
+    padding: 5px;
+    border-radius: 5px;
+}
+body.dark-theme .input__field{
+    border: 1px solid var(--color-gray);
+    color: var(--color-gray);
+}
+body.light-theme .input__field {
+    color: var(--color-dark-gray); 
+    background-color: var(--color-white); 
+}
+.searchInput{
+    border: 0;
+    margin-left: 10px;
+    padding: 5px;
+}
+body.dark-theme .sidebar__heading{
+    background-color: var(--color-black);
+}
+.links{
+    width: 100%;
+    padding: 10px;
+}
+.link{
+    display: flex;
+    margin: 7px;
+    padding: 7px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+body.dark-theme .link{
+    color: var(--color-white);
+}
+body.light-theme .link{
+    color: var(--color-dark-gray);
+}
+body.dark-theme .link:hover{
+    background-color: var(--color-dark-gray);
+}
+.link h3{
+    margin-left: 10px;
+}
+.btn__create__wishlist,.btn_toggle_theme{
+    width: 200px;
+    padding: 6px;
+    border: 0;
+    font-size: 1.2em;
+    border-radius: 7px;
+    cursor: pointer;
+}
+body.dark-theme .btn__create__wishlist,.btn_toggle_theme{
+    background-color: var(--color-red);
+}
+body.light-theme .btn__create__wishlist,body.light-theme .btn_toggle_theme{
+    background-color: var(--color-red-dark);
+}
+body.dark-theme .btn__create__wishlist a{
+    color: var(--color-black);
+}
+.btn_toggle_theme{
+    display: block;
+    margin: auto;
+    margin-bottom: 20px;
+}
+/*main content*/
+.main{
+    grid-area: main;
+    padding: 40px;
+}
+body.dark-theme .main{
+    background-color: var(--color-dark-gray);
+}
+body.light-theme .main{
+    background-color:var(--color-light-red-bright);
+}
+.intro{
+    padding: 15px;
+    border-radius: 6px;
+}
+body.dark-theme .intro{
+    border: 1px solid var(--color-red);
+}
+.intro__heading{
+    font-size: 2em;
+}
+body.dark-theme  .intro__highlight{
+    color: var(--color-red);
+}
+.intro__text{
+    margin-top: 15px;
+    font-size: 1.3em;
+}
+.main__search__Input{
+    width: 93%;
+    padding: 5px;
+    font-size: 1.2em;
+    border: 0;
+}
+body.dark-theme .main__search__Input{
+    background-color: var(--color-dark-gray);
+    color: var(--color-white);
+}
+.search__button{
+    padding: 7px;
+    font-size: 0.92rem;
+    border: 0;
+    cursor: pointer;
+    border-radius: 5px;
+}
+body.dark-theme .search__button{
+    background-color: var(--color-red);
+}
+body.light-theme .search__button{
+    background-color: var(--color-red-dark);
+}
+/*popular movies*/
+.popular__movies__list{
+    margin-top: 25px;
+}
+.popular__heading{
+    margin-bottom: 25px;
+    font-size: 1.7em;
+}
+.movies__list{
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(200px,1fr));
+    gap:20px;
+}
+.movie{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    transition: transform 0.5s;
+}
+body.dark-theme .movie{
+    border: 1px solid var(--color-white);
+}
+body.light-theme .movie{
+    border: 1px solid var(--color-dark-gray);
+}
+body.dark-theme .movie:hover{
+    transform: scale(1.1);
+}
+.movie__image{
+    width: 100%;
+    aspect-ratio: 9/ 14;
+}
+.movie__text{
+    padding: 10px;
+}
+.movie__icon{
+    position: absolute;
+    top: 0;
+    padding: 10px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+body.dark-theme .movie__icon{
+    background-color: var(--color-gray);
+}
+body.light-theme .movie__icon{
+    background-color: var(--color-white);
+}
+/*the create_watchlist*/
+.create_watchlist_form{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+#watchlist__name,#watchlist__description{
+    min-height: 30px;
+    border-radius: 3px;
+    margin: 10px 0;
+    padding: 10px;
+}
+body.dark-theme #watchlist__name,body.dark-theme #watchlist__description{
+    color: white;
+    background-color: var(--color-gray);
+    border: 1px solid var(--color-white);
+}
+body.light-theme #watchlist__name,body.light-theme #watchlist__description{
+    color: var(--color-black);
+    background-color: var(--color-light-gray);
+    border: 1px solid var(--color-white);
+}
+label{
+    margin-top: 10px;
+    font-size: 1.4em;
+}
+/*display watchlist*/
+.watchlists{
+    margin-top: 20px;
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(200px,1fr));
+    gap:20px;
+}
+.watch_progress{
+    margin: 10px 0px;
+    border-radius: 5px;
+}
+body.dark-theme .watch_progress{
+    border: 1px solid var(--color-white);
+}
+.watch_progress_bar{
+    /* width:0%; */
+    height: 40px;
+}
+body.dark-theme .watch_progress_bar{
+    background-color: var(--color-red);
+}
+.watchlistItem {
+    padding: 15px; 
+    border-radius: 8px; 
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    transition: transform 0.3s, box-shadow 0.3s; 
+    cursor: pointer; 
+}
+body.dark-theme .watchlistItem{
+    border: 1px solid var(--color-gray); 
+    background-color: var(--color-dark-gray); 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+}
+body.light-theme .watchlistItem{
+    border: 1px solid var(--color-dark-gray); 
+    background-color: var(--color-light-red-bright); 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+}
+body.dark-theme .watchlistItem:hover {
+    transform: translateY(-5px); 
+}
+body.dark-theme .watchlistItem:hover {
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.3); 
+    background-color: #2a2929; 
+}
+.watchlist_btns{
+    margin: 10px 0px;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.btn_watchlist{
+    margin: 5px 0px;
+    border: 0;
+    padding: 7px;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
+}
+body.dark-theme .btn_watchlist{
+    background: var(--gradient-red-black);
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    color: var(--color-white);
+}
+body.light-theme .btn_watchlist{
+    background: var(--gradient-light-red-black);
+    color: var(--color-black);
+}
+body.dark-theme .btn_watchlist:hover{
+    transform: translateY(-4px);
+}
+body.dark-theme .btn_watchlist:hover{
+    background: linear-gradient(45deg, #e60000, #1a1a1a);
+    box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.3);
+}
+.movies_in_watchlist{
+    list-style-type: none;
+}
+.watchlist__dropdown{
+    display: none;
+    position: absolute;
+    top:40px;
+    left:0;
+    transition: all 0.4s;
+}
+body.dark-theme .watchlist__dropdown:hover{
+    transform: translateY(-2px);
+    transition: all 0.4s;
+}
+body.dark-theme .watchlist__dropdown:hover{
+    box-shadow: 2px 2px 5px -1px rgba(0, 0, 0, 0.35);
+}
+.watchlist__dropdown_select {
+    width: 100%; 
+    padding: 10px; 
+    font-size: 1em; 
+    border-radius: 5px; 
+    cursor: pointer; 
+    transition: all 0.3s ease; 
+}
+body.dark-theme .watchlist__dropdown_select {
+    background-color: var(--color-dark-gray); 
+    color: var(--color-white); 
+    border: 1px solid var(--color-gray);
+}
+body.dark-theme .watchlist__dropdown_select:hover {
+    background-color: var(--color-dark-gray);
+    border-color: var(--color-white); 
+}
+.watchedMovie{
+    text-decoration: line-through;
+}
+/* Balloon Styles */
+body.dark-theme .balloon {
+    position: fixed;
+    bottom: -50px;
+    width: 40px;
+    height: 50px;
+    border-radius: 50%;
+    border-radius: 50%;
+    opacity: 0.8;
+    animation: float 6s ease-in infinite;
+}
+body.dark-theme .balloon{
+    background-color: var(--color-red);
+}
+body.dark-theme .balloon:nth-child(even) {
+    background-color: white;
+}
+body.dark-theme .balloon:nth-child(odd) {
+    background-color: red;
+}
+@keyframes float {
+    0% {
+      transform: translateY(0) scale(0.9);
+      opacity: 1;
+    }
+    50% {
+      transform: translateY(-200vh) scale(1.1);
+      opacity: 0.6;
+    }
+    100% {
+      transform: translateY(-300vh) scale(1.2);
+      opacity: 0;
+    }
+}
+@media screen and (max-width:768px) {
+    .sidebar{
+        display: none;
+    }
+    .topnav{
+        display: block;
+        text-align: right;
+        padding: 20px;
+    }
+    .topnav #myLinks {
+        display: none;
+    }
+    .toggle_sidebar{
+        width: 100%;
+    }
+    .topnav a{
+       text-decoration:none ;
+       color: white;
+       padding: 14px 16px;
+       text-decoration: none;
+       font-size: 17px;
+       display: block;
+       width: 100%;
+    }
+
+    .topnav a:hover {
+        background-color: #ddd;
+        color: black;
+      }
+    .container{
+        grid-template-areas: 
+        "main";
+    grid-template-columns: 1fr;
+    }
+    .main{
+        width: 100vw;
+    }
+}
+  

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Watchlists</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" type="image/x-icon" href="favicon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  </head>
+  <body class="light-theme">
+    <div class="container">
+      <aside class="sidebar">
+        <h1 class="sidebar__heading">Watchlists</h1>
+        <div class="links">
+          <a href="index.html">
+            <div class="link">
+              <i class="fa fa-home"></i>
+              <h3>Home</h3>
+            </div>
+          </a>
+          <a href="display_watchlist.html">
+            <div class="link">
+              <i class="fa fa-history"></i>
+              <h3>Watchlist</h3>
+            </div>
+          </a>
+        </div>
+        <a href="create_watchlist.html">
+          <button type="button" class="btn btn__create__wishlist">
+            <i class="fa fa-plus"></i> Create Wishlist
+          </button>
+        </a>
+      </aside>
+      <main class="main">
+        <button type="button" class="btn btn_toggle_theme">Switch Theme</button>
+        <div class="topnav">
+          <div id="myLinks">
+            <a href="index.html">Home</a>
+            <a href="display_watchlist.html">Watchlist</a>
+            <a href="create_watchlist.html">Create Wishlist</a>
+          </div>
+          <a href="#" class="icon">
+            <i class="fa fa-bars toggle_sidebar"></i>
+          </a>
+        </div>
+
+        <section class="intro">
+          <h2 class="intro__heading">
+            Welcome to <span class="intro__highlight">Watchlists</span>
+          </h2>
+          <p class="intro__text">
+            Browse movies, add them to watchlists and share them with friends.
+          </p>
+        </section>
+        <section class="search">
+          <div class="input__field">
+            <i class="fa fa-search"></i>
+            <input
+              type="text"
+              placeholder="Search for movies by title"
+              name="mainsearchInput"
+              class="main__search__Input"
+              id="main__search__Input"
+            />
+            <button type="button" class="btn search__button">Search</button>
+          </div>
+        </section>
+        <section class="popular__movies__list">
+          <h2 class="popular__heading">Popular Movies Right Now</h2>
+          <div class="movies__list"></div>
+        </section>
+      </main>
+    </div>
+    <script type="text/javascript" src="./script.js"></script>
+  </body>
+</html>
